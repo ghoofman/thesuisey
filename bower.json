@@ -1,0 +1,19 @@
+{
+  "name": "suisey",
+  "version": "0.0.0",
+  "authors": [
+    "Garrett Hoofman <gambitsunob@gmail.com>"
+  ],
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.3.1"
+  }
+}

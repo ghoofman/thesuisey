@@ -1,0 +1,16 @@
+{
+  "name": "suisey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-jslint": "^1.1.14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Garrett Hoofman",
+  "license": "ISC"
+}

@@ -1,0 +1,59 @@
+/* The controller itself */
+.suisey-custom-editor {
+	width: 300px;
+	height: 400px;
+	float: left;
+	position: relative;
+
+	.img-layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+	}
+
+	.text-layer {
+		position: absolute;
+		font-family: 'Proxima', sans-serif;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+	}
+
+	.icon-layer {
+		position: absolute;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+/* Editor Controller */
+.suisey-custom-control {
+	width: 450px;
+	height: 700px;
+	background-color: #ddfae4;
+	color: #306c48;
+	float: left;
+	margin-bottom: 75px;
+	margin-right: 75px;
+	padding: 10px;
+
+	hr {
+		background-color: #306c48;
+		padding: 1px;
+		margin: 10px 0px;
+	}
+
+	.control-colors .color {
+		width: 25px;
+		height: 25px;
+		float: left;
+	}
+}

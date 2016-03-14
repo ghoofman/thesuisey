@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+  	<script src="/build/suisey-custom.min.js"></script>
+	<link rel="stylesheet" href="/build/suisey-custom.css" />
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+  </head>
+  <body>
+
+     <div class="suisey-custom-control">
+         <h4>Body Color</h4>
+         <p>Choose a color</p>
+         <div class="control-colors shirt">
+             <!-- Change to radio inputs for form-submission? -->
+             <a class="color" data-color="#fff" data-type=""></a>
+             <a class="color" data-color="#f00" data-type="red"></a>
+             <a class="color" data-color="#00f" data-type="blue"></a>
+			  <div style="clear:both;"></div>
+         </div>
+
+         <hr />
+
+         <h4>Lapel Color</h4>
+         <p>Choose a color</p>
+         <div class="control-colors lapel">
+             <a class="color" data-color="#fff" data-type=""></a>
+             <a class="color" data-color="#f00" data-type="red"></a>
+             <a class="color" data-color="#00f" data-type="blue"></a>
+			  <div style="clear:both;"></div>
+         </div>
+
+         <hr />
+
+         <h4>Trim Color</h4>
+         <p>Choose a color</p>
+         <div class="control-colors trim">
+             <a class="color" data-color="#fff" data-type=""></a>
+             <a class="color" data-color="#f00" data-type="red"></a>
+             <a class="color" data-color="#00f" data-type="blue"></a>
+			  <div style="clear:both;"></div>
+         </div>
+
+         <hr />
+
+         <h4>Name</h4>
+         <input id="name" type="text" class="form-control" value="BEDOYA" />
+
+         <hr />
+
+         <h4>Number</h4>
+         <input id="number" type="number" class="form-control" value="11" />
+
+         <hr />
+
+         <h4>Icon</h4>
+         <input type='file' id="imgInp" class="form-control" />
+
+     </div>
+	  <div style="float:left">
+		  <div class="suisey-custom-editor front"></div>
+		  <div class="suisey-custom-editor back"></div>
+		  <div style="clear:both"></div>
+	  </div>
+     <script>
+      var config = {
+          width: 600,
+          height: 800,
+          root: '/examples/img/'
+      };
+      var editor = new SuiseyCustom('.suisey-custom-editor.front', config);
+      var editorBack = new SuiseyCustom('.suisey-custom-editor.back', config);
+
+      // Back of Suisey
+      var shirtBackLayer = editorBack.addImageLayer('shirtBack'); shirtBackLayer.setVariant('red');
+	  var lapelBackLayer = editorBack.addImageLayer('lapelBack'); lapelBackLayer.setVariant('blue');
+      var titleLayer = editorBack.addTextLayer('BEDOYA', { x: 300, y: 200, size: 50 });
+      titleLayer.setColor('#fff');
+      var numberLayer = editorBack.addTextLayer('11', { x: 300, y: 325, size: 160 });
+      numberLayer.setColor('#fff');
+
+      // Front of Suisey
+	  var shirtLayer = editor.addImageLayer('shirt'); shirtLayer.setVariant('red');
+	  var iconLayer = editor.addIconLayer('icon.png', { x: 375, y: 320, w: 60, h: 60 });
+	  var lapelLayer = editor.addImageLayer('lapel'); lapelLayer.setVariant('blue');
+	  var trimLayer = editor.addImageLayer('trim'); trimLayer.setVariant('blue');
+
+
+      // Events to change back and front of the Suisey
+      $('.shirt .color').click(function() {
+          shirtLayer.setVariant($(this).data('type'));
+          shirtBackLayer.setVariant($(this).data('type'));
+      });
+      $('.lapel .color').click(function() {
+          lapelLayer.setVariant($(this).data('type'));
+          lapelBackLayer.setVariant($(this).data('type'));
+      });
+      $('.trim .color').click(function() {
+          trimLayer.setVariant($(this).data('type'));
+      });
+      $('#name').keyup(function() {
+          titleLayer.setText($(this).val());
+      });
+      $('#number').change(function() {
+          numberLayer.setText($(this).val());
+      });
+      $('#number').keyup(function() {
+          numberLayer.setText($(this).val());
+      });
+      $('#imgInp').change(function() {
+          if (this.files && this.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  iconLayer.setImage(e.target.result);
+              }
+
+              reader.readAsDataURL(this.files[0]);
+          }
+      });
+
+       // Setup the color blocks to show the corrent colors
+       var colors = $('.color');
+       for(var i = 0; i < colors.length; i++) {
+           var color = $(colors[i]);
+           color.attr('style', 'background-color: ' + color.data('color'));
+       }
+
+      // Get the json object representing the Suisey
+      var result = {
+          front: editor.getResult(),
+          back: editorBack.getResult()
+      };
+      console.log(result);
+
+     </script>
+
+
+
+  </body>
+</html>
