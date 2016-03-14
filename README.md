@@ -2,6 +2,8 @@
 
 The Suisey Custom Editor is a widget for creating a customized suisey for TheSuisey.com website
 
+[https://trello.com/b/FBkyJtV2/the-suisey](https://trello.com/b/FBkyJtV2/the-suisey)
+
 ## Implementation
 
 After dependencies (jQuery), SuiseyCustom requires a stylesheet, a script, and an HTML element to get the job done:
