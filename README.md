@@ -29,7 +29,7 @@ In the command line in the project directory run:
 ```text
 npm install -g bower
 npm install -g http-server
-npm install -g grunt
+npm install -g grunt-cli
 bower install
 npm install
 grunt
