@@ -11,7 +11,7 @@ var SuiseyCustomIconLayer;
         this.editor = editor;
         this.img = null;
 
-        this.element = jQuery('<div class="img-layer"></div>');
+        this.element = jQuery('<div class="icon-layer"></div>');
         editor.container.append(this.element);
 
         this.entity = jQuery('<img />');

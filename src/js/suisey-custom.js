@@ -38,10 +38,10 @@ var SuiseyCustom;
         container: null,
 
         // Adds an image layer to the editor
-        addImageLayer: function (name) {
+        addImageLayer: function (name, options) {
 
             /*global SuiseyCustomImageLayer */
-            var layer = new SuiseyCustomImageLayer(this, name);
+            var layer = new SuiseyCustomImageLayer(this, name, options);
             this.layers.push(layer);
 
             return layer;
