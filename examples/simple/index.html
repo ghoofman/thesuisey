@@ -152,8 +152,74 @@
 
          <hr />
 
+         <h4>Name Color</h4>
+         <p>Choose a color</p>
+         <div class="control-colors name">
+             <a class="color" data-color="#2f67a0" data-type="[47,103,160]"></a>
+             <a class="color" data-color="#002589" data-type="[0,37,137]"></a>
+             <a class="color" data-color="#060934" data-type="[6,9,52]"></a>
+             <a class="color" data-color="#0a000b" data-type="[10,0,11]"></a>
+             <a class="color" data-color="#b3000b" data-type="[179,0,11]"></a>
+             <a class="color" data-color="#ca061e" data-type="[202,6,30]"></a>
+             <a class="color" data-color="#830003" data-type="[131,0,3]"></a>
+             <a class="color" data-color="#d61800" data-type="[214,24,0]"></a>
+             <a class="color" data-color="#935e18" data-type="[147,94,24]"></a>
+             <a class="color" data-color="#030100" data-type="[3,1,0]"></a>
+             <a class="color" data-color="#6d7369" data-type="[109,115,105]"></a>
+             <a class="color" data-color="#280a00" data-type="[40,10,0]"></a>
+             <a class="color" data-color="#eeeaff" data-type="[238,234,255]"></a>
+             <a class="color" data-color="#e6dbae" data-type="[230,219,174]"></a>
+             <a class="color" data-color="#290008" data-type="[41,0,8]"></a>
+             <a class="color" data-color="#005617" data-type="[0,86,23]"></a>
+             <a class="color" data-color="#053f0f" data-type="[5,63,15]"></a>
+             <a class="color" data-color="#021003" data-type="[2,16,3]"></a>
+             <a class="color" data-color="#240068" data-type="[36,0,104]"></a>
+             <a class="color" data-color="#090245" data-type="[9,2,69]"></a>
+             <a class="color" data-color="#bf2d08" data-type="[191,45,8]"></a>
+             <a class="color" data-color="#ed8800" data-type="[237,136,0]"></a>
+             <a class="color" data-color="#666455" data-type="[102,100,85]"></a>
+             <a class="color" data-color="#b00000" data-type="[176,0,0]"></a>
+             <a class="color" data-color="#ffb600" data-type="[255,182,0]"></a>
+			  <div style="clear:both;"></div>
+         </div>
+
+         <hr />
+
          <h4>Number</h4>
          <input id="number" type="number" class="form-control" value="11" />
+
+         <hr />
+
+         <h4>Number Color</h4>
+         <p>Choose a color</p>
+         <div class="control-colors number">
+             <a class="color" data-color="#2f67a0" data-type="[47,103,160]"></a>
+             <a class="color" data-color="#002589" data-type="[0,37,137]"></a>
+             <a class="color" data-color="#060934" data-type="[6,9,52]"></a>
+             <a class="color" data-color="#0a000b" data-type="[10,0,11]"></a>
+             <a class="color" data-color="#b3000b" data-type="[179,0,11]"></a>
+             <a class="color" data-color="#ca061e" data-type="[202,6,30]"></a>
+             <a class="color" data-color="#830003" data-type="[131,0,3]"></a>
+             <a class="color" data-color="#d61800" data-type="[214,24,0]"></a>
+             <a class="color" data-color="#935e18" data-type="[147,94,24]"></a>
+             <a class="color" data-color="#030100" data-type="[3,1,0]"></a>
+             <a class="color" data-color="#6d7369" data-type="[109,115,105]"></a>
+             <a class="color" data-color="#280a00" data-type="[40,10,0]"></a>
+             <a class="color" data-color="#eeeaff" data-type="[238,234,255]"></a>
+             <a class="color" data-color="#e6dbae" data-type="[230,219,174]"></a>
+             <a class="color" data-color="#290008" data-type="[41,0,8]"></a>
+             <a class="color" data-color="#005617" data-type="[0,86,23]"></a>
+             <a class="color" data-color="#053f0f" data-type="[5,63,15]"></a>
+             <a class="color" data-color="#021003" data-type="[2,16,3]"></a>
+             <a class="color" data-color="#240068" data-type="[36,0,104]"></a>
+             <a class="color" data-color="#090245" data-type="[9,2,69]"></a>
+             <a class="color" data-color="#bf2d08" data-type="[191,45,8]"></a>
+             <a class="color" data-color="#ed8800" data-type="[237,136,0]"></a>
+             <a class="color" data-color="#666455" data-type="[102,100,85]"></a>
+             <a class="color" data-color="#b00000" data-type="[176,0,0]"></a>
+             <a class="color" data-color="#ffb600" data-type="[255,182,0]"></a>
+			  <div style="clear:both;"></div>
+         </div>
 
          <hr />
 
@@ -167,18 +233,7 @@
 		  <div style="clear:both"></div>
 	  </div>
 
-      <img id="test" />
      <script>
-     var stroke = new SuiseyCustomStroke(
-         "/examples/img/lapel_red.png", {
-             outline: [ 255, 255, 255 ],
-             overlay: [ 0, 0, 255 ],
-             size: 5
-         }, function() {
-             $('#test').attr('src', stroke.imgSrc());
-         });
-         $('#test').attr('src', stroke.imgSrc());
-
 
      //$('body').append(stroke.canvasEl);
       var config = {
@@ -199,7 +254,7 @@
 
       // Front of Suisey
 	  var shirtLayer = editor.addImageLayer('shirt', { overlay: [ 255, 0, 0 ] });
-	  var iconLayer = editor.addIconLayer('icon.png', { x: 375, y: 320, w: 60, h: 60 });
+	  var iconLayer = editor.addIconLayer('icon.png', { x: 404, y: 320, w: 60, h: 60 });
 	  var lapelLayer = editor.addImageLayer('lapel', { overlay: [ 0, 0, 255 ], outline: [255, 255, 255] });
 	  var buttonLayer = editor.addImageLayer('trim', { overlay: [ 0, 0, 255 ] });
 

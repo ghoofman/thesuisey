@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         src: ['src/js/*.js', 'src/js/suisey-custom.js'],
         dest: 'build/suisey-custom.min.js'
       }
-      },
+    },
     less: {
         development: {
             files: {
